@@ -11,7 +11,9 @@ public class medicalRecordsManager {
         String medicalRecords = "";
         String medicalRecordsArray[];
 
+
         try {
+            // Create a scanner to read the file
             File medicalRecordFile = new File("src//databases//medicalRecords.csv");
             Scanner scanner = new Scanner(medicalRecordFile);
             while (scanner.hasNextLine()) {
@@ -35,6 +37,7 @@ public class medicalRecordsManager {
             Scanner scanner = new Scanner(medicalRecordFile);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
+                // Check if record matches patient name, if yes then add to personalMedicalRecords
                 if (line.contains(patientName)){
                     personalMedicalRecords += line + "\n";
                 }

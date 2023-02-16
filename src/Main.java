@@ -1,5 +1,5 @@
 import dashboards.*;
-import misc.comboBoxManager;
+import misc.*;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class Main extends JFrame {
     private JPanel rootPanel;
     private JPanel loginPanel;
-    private JPasswordField passwordField1;
-    private JTextField textField1;
+    private JPasswordField loginPassword;
+    private JTextField loginUsername;
     private JButton loginButton;
     private JPanel patientDashboardPanel;
     private JTabbedPane patientTabbedPane;
@@ -99,6 +99,14 @@ public class Main extends JFrame {
     private JTextField TArecords;
     private JTextArea staffHomeContent;
     private JTextArea patientHomeContent;
+    private JButton toRegisterButton;
+    private JPanel registerPanel;
+    private JTextField registerUsername;
+    private JTextField registerPassword;
+    private JTextField registerConfirmPassword;
+    private JTextField staffCode;
+    private JButton registerButton;
+    private JButton toLoginButton;
     private String status;
     private String clientUsername;
 
@@ -411,13 +419,29 @@ public class Main extends JFrame {
     // Constructor for MAIN CLASS
     public Main(){
 
+        // If user clicks register an account button
+        toRegisterButton.addActionListener(e -> {
+            // Hide the login panel
+            loginPanel.setVisible(false);
+            // Display the register panel
+            registerPanel.setVisible(true);
+        });
+
+        // If user clicks back to login button
+        toLoginButton.addActionListener(e -> {
+            // Hide the register panel
+            registerPanel.setVisible(false);
+            // Display the login panel
+            loginPanel.setVisible(true);
+        });
+
         // Create an instance of dashboard class
         Dashboard dashboard = new Dashboard();
 
         // If user clicks login button
         loginButton.addActionListener(e -> {
-            String username = (textField1.getText()).replaceAll(" ","");
-            String password = passwordField1.getText();
+            String username = (loginUsername.getText()).replaceAll(" ","");
+            String password = loginPassword.getText();
 
             // Check if the "users.csv" file exists
             File userFile = new File("src//databases//users.csv");
@@ -467,6 +491,27 @@ public class Main extends JFrame {
                 System.out.println("File does not exist");
             }
         });
+
+        // If user clicks register button
+        registerButton.addActionListener(e -> {
+            String username = (registerUsername.getText()).replaceAll(" ","");
+            String password = registerPassword.getText();
+            String confirmPassword = registerConfirmPassword.getText();
+            String code = (staffCode.getText()).replaceAll(" ","");
+
+            // Try registering the user
+            if(registrationManager.register(username, password, confirmPassword, code, registerPanel)){
+                // Clear all text-fields
+                registerUsername.setText("");
+                registerPassword.setText("");
+                registerConfirmPassword.setText("");
+                staffCode.setText("");
+                // Hide the register panel
+                registerPanel.setVisible(false);
+                // Display the login panel
+                loginPanel.setVisible(true);
+            }
+        });
     }
 
     // MAIN METHOD
@@ -505,8 +550,8 @@ public class Main extends JFrame {
         // Hide dashboard
         DashboardPanel.setVisible(false);
         // Clear the text fields
-        textField1.setText("");
-        passwordField1.setText("");
+        loginUsername.setText("");
+        loginPassword.setText("");
         status = "";
     }
 }
