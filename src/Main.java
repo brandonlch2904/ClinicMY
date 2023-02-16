@@ -499,6 +499,12 @@ public class Main extends JFrame {
             String confirmPassword = registerConfirmPassword.getText();
             String code = (staffCode.getText()).replaceAll(" ","");
 
+            // Check if all fields are filled
+            if (username.equals("") || password.equals("") || confirmPassword.equals("")) {
+                JOptionPane.showMessageDialog(rootPanel, "Please fill in all fields");
+                return;
+            }
+
             // Try registering the user
             if(registrationManager.register(username, password, confirmPassword, code, registerPanel)){
                 // Clear all text-fields
