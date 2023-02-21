@@ -27,7 +27,7 @@ public class dashboards {
 
         }
 
-        // Overloading Method (Polymorphism)
+        // Overloading Method
         public static void timeslotsTableClicked(JTable timeslotTable, JTextField textField2, JTextField textField3, JTextField textField4, JTextField textField5) {
 
             String data[] = tableManager.getDataFromTable(timeslotTable, 4);
@@ -43,7 +43,7 @@ public class dashboards {
             timeslotTable.getSelectionModel().clearSelection();
         }
 
-        // Overloading Method (Polymorphism)
+        // Overloading Method
         public static void timeslotsTableClicked(JTable timeslotTable, JComboBox comboBox1, JComboBox comboBox2, JComboBox comboBox3, JComboBox comboBox4) {
 
             String[] data = tableManager.getDataFromTable(timeslotTable, 4);
@@ -110,6 +110,13 @@ public class dashboards {
             // Display a message to the user
             if (removeStatus) {
                 JOptionPane.showMessageDialog(appointmentsPanel, "Appointment removed successfully");
+                // Clear all the text fields
+                dateTextField.setText("");
+                startTextField.setText("");
+                endTextField.setText("");
+                doctorTextField.setText("");
+                patientTextField.setText("");
+                statusTextField.setText("");
             } else {
                 JOptionPane.showMessageDialog(appointmentsPanel, "Cancel failed, an error occurred");
             }

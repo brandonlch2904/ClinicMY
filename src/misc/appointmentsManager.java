@@ -85,6 +85,7 @@ public class appointmentsManager {
         boolean bookingStatus = true;
         try{
             String appointmentStatus = "Pending";
+            String data = username + "," + doctor + "," + date + "," + startTime + "," + endTime + "," + appointmentStatus + "\n";
 
             // Checks if the appointment is already booked
             String[] appointmentsArray = getAppointments();
@@ -96,7 +97,7 @@ public class appointmentsManager {
                 // If there are no appointments
                 if (appointment == "") {
                     FileWriter myWriter = new FileWriter("src//databases//appointments.csv");
-                    myWriter.write(username + "," + doctor + "," + date + "," + startTime + "," + endTime + "," + appointmentStatus + "\n");
+                    myWriter.write(data);
                     myWriter.close();
                     return bookingStatus;
 
@@ -107,7 +108,7 @@ public class appointmentsManager {
                 // Append the appointment to the file
                 }else{
                     FileWriter myWriter = new FileWriter("src//databases//appointments.csv", true);
-                    myWriter.write(username + "," + doctor + "," + date + "," + startTime + "," + endTime + "," + appointmentStatus + "\n");
+                    myWriter.write(data);
                     myWriter.close();
                     return bookingStatus;
                 }
