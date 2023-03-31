@@ -18,13 +18,13 @@ public class Patient extends dashboards{
             super(timeslotTable);;
         }
 
-        public static void bookAppointment(JTextField textField2, JTextField textField3, JTextField textField4, JTextField textField5, String clientUsername, JPanel timeslotPanel) {
+        public static void bookAppointment(JTextField dateTextField, JTextField startTimeTextField, JTextField endTimeTextField, JTextField doctorTextField, String clientUsername, JPanel timeslotPanel) {
 
             // Get the values of the text fields
-            String date = textField2.getText();
-            String startTime = textField3.getText();
-            String endTime = textField4.getText();
-            String doctor = textField5.getText();
+            String date = dateTextField.getText();
+            String startTime = startTimeTextField.getText();
+            String endTime = endTimeTextField.getText();
+            String doctor = doctorTextField.getText();
 
             // Book the appointment
             boolean bookingStatus = new appointmentsManager().bookAppointment(doctor, date, startTime, endTime, clientUsername);

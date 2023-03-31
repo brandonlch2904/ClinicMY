@@ -148,11 +148,11 @@ public class dashboards {
             String data[] = tableManager.getDataFromTable(medicalRecordsTable, 6);
 
             // Set the text fields to the values of the selected row
-            date.setText(data[0]);
-            startTime.setText(data[1]);
-            endTime.setText(data[2]);
-            doctorName.setText(data[3]);
-            patientName.setText(data[4]);
+            patientName.setText(data[0]);
+            doctorName.setText(data[1]);
+            date.setText(data[2]);
+            startTime.setText(data[3]);
+            endTime.setText(data[4]);
             records.setText(data[5]);
 
         }

@@ -36,12 +36,12 @@ public class Main extends JFrame {
     private JTextField patientAppointmentName;
     private JTextField patientAppointmentStatus;
     private JTable medicalRecordsTable;
-    private JTextField textField12;
-    private JTextField textField13;
-    private JTextField textField14;
-    private JTextField textField15;
-    private JTextField textField16;
-    private JTextArea textArea1;
+    private JTextField MRendTime;
+    private JTextField MRstartTime;
+    private JTextField MRdate;
+    private JTextField MRdoctor;
+    private JTextField MRpatient;
+    private JTextArea MRrecords;
     private JPanel staffDashboardPanel;
     private JTabbedPane staffTabbedPane;
     private JPanel patientHomePanel;
@@ -192,7 +192,7 @@ public class Main extends JFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     // Get the selected row
-                    Patient.medicalRecords.recordsTableClicked(medicalRecordsTable, textField12, textField13, textField14, textField15, textField16, textArea1);
+                    Patient.medicalRecords.recordsTableClicked(medicalRecordsTable, MRdate, MRstartTime, MRendTime, MRdoctor, MRpatient, MRrecords);
                 }
             });
 

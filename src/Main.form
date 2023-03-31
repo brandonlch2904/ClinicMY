@@ -519,7 +519,7 @@
                           <text value="Appointment started at:"/>
                         </properties>
                       </component>
-                      <component id="975d7" class="javax.swing.JTextField" binding="textField12" default-binding="true">
+                      <component id="975d7" class="javax.swing.JTextField" binding="MRendTime">
                         <constraints>
                           <grid row="2" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -529,7 +529,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="10611" class="javax.swing.JTextField" binding="textField13" default-binding="true">
+                      <component id="10611" class="javax.swing.JTextField" binding="MRstartTime">
                         <constraints>
                           <grid row="1" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -539,7 +539,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="48266" class="javax.swing.JTextField" binding="textField14" default-binding="true">
+                      <component id="48266" class="javax.swing.JTextField" binding="MRdate">
                         <constraints>
                           <grid row="0" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -549,7 +549,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="9df19" class="javax.swing.JTextField" binding="textField15" default-binding="true">
+                      <component id="9df19" class="javax.swing.JTextField" binding="MRdoctor">
                         <constraints>
                           <grid row="3" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -559,7 +559,7 @@
                           <editable value="false"/>
                         </properties>
                       </component>
-                      <component id="482b9" class="javax.swing.JTextField" binding="textField16" default-binding="true">
+                      <component id="482b9" class="javax.swing.JTextField" binding="MRpatient">
                         <constraints>
                           <grid row="4" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
                             <preferred-size width="150" height="-1"/>
@@ -580,7 +580,7 @@
                       <text value="Medical Records:"/>
                     </properties>
                   </component>
-                  <component id="ba7e5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+                  <component id="ba7e5" class="javax.swing.JTextArea" binding="MRrecords">
                     <constraints>
                       <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                         <preferred-size width="150" height="50"/>
